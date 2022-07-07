@@ -2,8 +2,8 @@ geoip-service
 =============
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
-[![Build Status](https://github.com/ProtocolONE/geoip-service/workflows/Build/badge.svg?branch=develop)](https://github.com/ProtocolONE/geoip-service/actions) 
-[![Go Report Card](https://goreportcard.com/badge/github.com/ProtocolONE/geoip-service)](https://goreportcard.com/report/github.com/ProtocolONE/geoip-service)
+[![Build Status](https://github.com/paysuper/geoip-service/workflows/Build/badge.svg?branch=develop)](https://github.com/paysuper/geoip-service/actions) 
+[![Go Report Card](https://goreportcard.com/badge/github.com/paysuper/geoip-service)](https://goreportcard.com/report/github.com/paysuper/geoip-service)
 
 A fast [Go-Micro](https://github.com/micro/go-micro) based microservice for looking up MaxMind GeoIP2 and GeoLite2 database.
 
@@ -21,7 +21,7 @@ setup your own registry with `MICRO_REGISTRY`/`MICRO_REGISTRY_ADDRESS` or use ot
 
 Download it 
 
-`go get github.com/ProtocolONE/geoip-service`
+`go get github.com/paysuper/geoip-service`
 
 If you need it uou can rebuild proto file with protoc 
 ```
@@ -48,8 +48,8 @@ package main
 import (
     "context"
     "fmt"
-    "github.com/ProtocolONE/geoip-service/pkg"
-    "github.com/ProtocolONE/geoip-service/pkg/proto"
+    "github.com/paysuper/geoip-service/pkg"
+    "github.com/paysuper/geoip-service/pkg/proto"
     "github.com/micro/go-micro"
 )
 

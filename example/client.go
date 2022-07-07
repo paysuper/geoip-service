@@ -3,9 +3,9 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/ProtocolONE/geoip-service/pkg"
-	"github.com/ProtocolONE/geoip-service/pkg/proto"
 	"github.com/micro/go-micro"
+	"github.com/paysuper/geoip-service/pkg"
+	"github.com/paysuper/geoip-service/pkg/proto"
 )
 
 func main() {

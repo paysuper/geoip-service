@@ -3,10 +3,10 @@ package geoip
 import (
 	"context"
 	"fmt"
-	"net"
-	"log"
-	"github.com/ProtocolONE/geoip-service/pkg/proto"
 	"github.com/oschwald/geoip2-golang"
+	"github.com/paysuper/geoip-service/pkg/proto"
+	"log"
+	"net"
 )
 
 const (

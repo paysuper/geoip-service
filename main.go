@@ -2,22 +2,21 @@ package main
 
 import (
 	"fmt"
-	"github.com/InVisionApp/go-health"
+	"github.com/InVisionApp/go-health/v2"
+	"github.com/InVisionApp/go-health/v2/handlers"
+	"github.com/kelseyhightower/envconfig"
 	"github.com/micro/go-micro"
+	"github.com/micro/go-plugins/client/selector/static"
+	metrics "github.com/micro/go-plugins/wrapper/monitoring/prometheus"
 	"github.com/oschwald/geoip2-golang"
+	geoip "github.com/paysuper/geoip-service/pkg"
+	"github.com/paysuper/geoip-service/pkg/proto"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
+	"gopkg.in/Clever/pathio.v3"
 	"io/ioutil"
 	"log"
 	"net/http"
 	"time"
-
-	"github.com/InVisionApp/go-health/handlers"
-	geoip "github.com/ProtocolONE/geoip-service/pkg"
-	"github.com/ProtocolONE/geoip-service/pkg/proto"
-	prometheus_plugin "github.com/ProtocolONE/go-micro-plugins/wrapper/monitoring/prometheus"
-	"github.com/kelseyhightower/envconfig"
-	"github.com/micro/go-plugins/client/selector/static"
-	"github.com/prometheus/client_golang/prometheus/promhttp"
-	"gopkg.in/Clever/pathio.v3"
 )
 
 type Config struct {
@@ -72,7 +71,7 @@ func main() {
 	options := []micro.Option{
 		micro.Name(geoip.ServiceName),
 		micro.Version(geoip.Version),
-		micro.WrapHandler(prometheus_plugin.NewHandlerWrapper()),
+		micro.WrapHandler(metrics.NewHandlerWrapper()),
 	}
 
 	if cfg.MicroSelector == "static" {

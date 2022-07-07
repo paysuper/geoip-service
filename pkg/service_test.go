@@ -2,15 +2,15 @@ package geoip_test
 
 import (
 	"context"
-	"github.com/ProtocolONE/geoip-service/pkg"
-	"github.com/ProtocolONE/geoip-service/pkg/proto"
 	"github.com/oschwald/geoip2-golang"
+	"github.com/paysuper/geoip-service/pkg"
+	"github.com/paysuper/geoip-service/pkg/proto"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/suite"
-	"net"
-	"io/ioutil"
-	"testing"
 	pathio "gopkg.in/Clever/pathio.v3"
+	"io/ioutil"
+	"net"
+	"testing"
 )
 
 type ServiceTestSuite struct {
@@ -34,7 +34,7 @@ func (suite *ServiceTestSuite) SetupTest() {
 		suite.Fail("Unable to read database")
 	}
 
-	db, err := geoip2.FromBytes(geoipBuf)	
+	db, err := geoip2.FromBytes(geoipBuf)
 	if err != nil {
 		suite.Fail("Unable to open database")
 	}
