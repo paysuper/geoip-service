@@ -13,7 +13,7 @@ metadata:
     heritage: {{ .Release.Service }}
     role: {{ $deployment.role }}
   annotations: 
-    released: {{ .Release.Time}}    
+    released: {{ now }}
 spec:
   selector:
     matchLabels:
