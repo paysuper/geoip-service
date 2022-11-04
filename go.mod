@@ -1,7 +1,7 @@
 module github.com/paysuper/geoip-service
 
 require (
-	github.com/InVisionApp/go-health/v2 v2.1.2
+	github.com/InVisionApp/go-health/v2 v2.1.3
 	github.com/golang/protobuf v1.5.2
 	github.com/kelseyhightower/envconfig v1.3.0
 	github.com/micro/go-micro v1.18.0
@@ -11,7 +11,6 @@ require (
 	github.com/prometheus/client_golang v1.3.0
 	github.com/stretchr/testify v1.7.0
 	gopkg.in/Clever/pathio.v3 v3.7.1
-	gopkg.in/DATA-DOG/go-sqlmock.v1 v1.3.0 // indirect
 )
 
 replace (
