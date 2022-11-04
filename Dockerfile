@@ -1,4 +1,4 @@
-FROM golang:1.13-alpine AS builder
+FROM golang:1.17-alpine AS builder
 MAINTAINER Nikolay Bondarenko <nikolay.bondarenko@protocol.one>
 
 RUN apk add bash ca-certificates git
@@ -13,7 +13,7 @@ RUN go mod download
 COPY . ./
 RUN CGO_ENABLED=0 GOOS=linux go build -a -o ./bin/geoip-service .
 
-FROM alpine:3.11
+FROM alpine:3.16
 
 RUN apk update && apk add ca-certificates tzdata && rm -rf /var/cache/apk/*
 
